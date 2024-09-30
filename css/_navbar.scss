@@ -1,0 +1,38 @@
+/* Navbar Styles */
+.navbar {
+    margin: 30px auto;
+    max-width: 80%;
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two equal columns */
+    padding: 20px;
+    align-items: center; /* Center items vertically */
+}
+
+.navbar-left {
+    justify-self: start;
+}
+
+.navbar-right {
+    justify-self: end;
+}
+
+.navbar-title {
+    font-family: fonts.$main-font;
+    font-size: 30px;
+    font-weight: bold;
+    color: black;
+    text-decoration: none;
+}
+
+.navbar-right a {
+    font-family: fonts.$main-font;
+    font-size: 18px;
+    margin-left: 20px;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+.navbar-right a:hover {
+    text-decoration: underline;
+}
