@@ -1,0 +1,74 @@
+@use "fonts";
+@import "navbar";
+@import "footer";
+
+.container-section {
+    /* All sections */
+    display: flex;
+    position: relative;
+    margin: 30px auto;
+    max-width: 80%;
+    min-height: 50vh;
+}
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    min-height: inherit;
+}
+
+.left-container {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    min-height: inherit;
+}
+
+.right-container {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+.right-container-informations {
+    position: relative; /* Necessário para o pseudo-elemento se posicionar em relação ao <p> */
+    padding-top: 20px; /* Espaçamento extra no topo para não sobrepor o conteúdo */
+}
+
+.right-container-informations::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 3%; /* Defina a largura da "borda" como porcentagem */
+    height: 3px; /* Altura da "borda" */
+    background-color: fonts.$main-font-color; /* Cor da "borda" */
+}
+.main-title,
+.right-container-informations,
+.informations,
+.span-style {
+    font-family: fonts.$main-font;
+    font-optical-sizing: auto;
+    width: 85%;
+
+    &.main-title {
+        font-size: 40px;
+        line-height: 55px;
+        font-weight: 700;
+        font-style: normal;
+    }
+
+    &.informations {
+        color: fonts.$main-font-color;
+        line-height: 26px;
+        font-weight: 700;
+        font-style: normal;
+    }
+    &.span-style {
+        color: #4a4ff2;
+    }
+}
