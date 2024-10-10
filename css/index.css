@@ -1,4 +1,3 @@
-@charset "UTF-8";
 /* Navbar Styles */
 .navbar {
   margin: 30px auto;
@@ -98,10 +97,9 @@
 .container-section {
   /* All sections */
   display: flex;
-  position: relative;
   margin: 30px auto;
   max-width: 80%;
-  min-height: 50vh;
+  max-height: 100vh;
 }
 
 .container {
@@ -118,6 +116,9 @@
   width: 50%;
   min-height: inherit;
 }
+.left-container.section-3 {
+  width: 60%;
+}
 
 .right-container {
   display: flex;
@@ -126,51 +127,378 @@
   justify-content: flex-end;
   align-items: flex-end;
 }
-
-.right-container-informations {
-  position: relative; /* Necessário para o pseudo-elemento se posicionar em relação ao <p> */
-  padding-top: 20px; /* Espaçamento extra no topo para não sobrepor o conteúdo */
+.right-container.section-3 {
+  width: 20%;
 }
 
-.right-container-informations::before {
+.middle-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-self: end;
+}
+.middle-container.section-3 {
+  width: 20%;
+}
+
+.right-container-info-1 {
+  position: relative;
+  padding-top: 20px; /* Extra spacing at the top to avoid overlapping the content */
+}
+
+.right-container-info-1::before {
   content: "";
   position: absolute;
   top: 0;
   left: 0;
-  width: 3%; /* Defina a largura da "borda" como porcentagem */
-  height: 3px; /* Altura da "borda" */
-  background-color: #979797; /* Cor da "borda" */
+  width: 3%; /* "Border" width */
+  height: 3px; /* Height of the "border" */
+  background-color: #979797; /* "Border" color */
 }
 
 .main-title,
-.right-container-informations,
-.informations,
+.second-title,
+.third-title,
+.fourth-title,
+.right-container-info-1,
+.info-1,
+.info-3,
+.info-4-style-1,
+.info-4-style-2,
+.info-4-style-3,
 .span-style {
   font-family: "Mulish", sans-serif;
   font-optical-sizing: auto;
   width: 85%;
+  margin: 10px;
+}
+.main-title.main-title, .main-title.second-title, .main-title.third-title, .main-title.fourth-title,
+.second-title.main-title,
+.second-title.second-title,
+.second-title.third-title,
+.second-title.fourth-title,
+.third-title.main-title,
+.third-title.second-title,
+.third-title.third-title,
+.third-title.fourth-title,
+.fourth-title.main-title,
+.fourth-title.second-title,
+.fourth-title.third-title,
+.fourth-title.fourth-title,
+.right-container-info-1.main-title,
+.right-container-info-1.second-title,
+.right-container-info-1.third-title,
+.right-container-info-1.fourth-title,
+.info-1.main-title,
+.info-1.second-title,
+.info-1.third-title,
+.info-1.fourth-title,
+.info-3.main-title,
+.info-3.second-title,
+.info-3.third-title,
+.info-3.fourth-title,
+.info-4-style-1.main-title,
+.info-4-style-1.second-title,
+.info-4-style-1.third-title,
+.info-4-style-1.fourth-title,
+.info-4-style-2.main-title,
+.info-4-style-2.second-title,
+.info-4-style-2.third-title,
+.info-4-style-2.fourth-title,
+.info-4-style-3.main-title,
+.info-4-style-3.second-title,
+.info-4-style-3.third-title,
+.info-4-style-3.fourth-title,
+.span-style.main-title,
+.span-style.second-title,
+.span-style.third-title,
+.span-style.fourth-title {
+  font-weight: 700;
+  font-style: normal;
+  width: auto;
 }
 .main-title.main-title,
-.right-container-informations.main-title,
-.informations.main-title,
+.second-title.main-title,
+.third-title.main-title,
+.fourth-title.main-title,
+.right-container-info-1.main-title,
+.info-1.main-title,
+.info-3.main-title,
+.info-4-style-1.main-title,
+.info-4-style-2.main-title,
+.info-4-style-3.main-title,
 .span-style.main-title {
   font-size: 40px;
   line-height: 55px;
-  font-weight: 700;
+}
+.main-title.second-title,
+.second-title.second-title,
+.third-title.second-title,
+.fourth-title.second-title,
+.right-container-info-1.second-title,
+.info-1.second-title,
+.info-3.second-title,
+.info-4-style-1.second-title,
+.info-4-style-2.second-title,
+.info-4-style-3.second-title,
+.span-style.second-title {
+  font-size: 28px;
+  line-height: 38px;
+}
+.main-title.third-title,
+.second-title.third-title,
+.third-title.third-title,
+.fourth-title.third-title,
+.right-container-info-1.third-title,
+.info-1.third-title,
+.info-3.third-title,
+.info-4-style-1.third-title,
+.info-4-style-2.third-title,
+.info-4-style-3.third-title,
+.span-style.third-title {
+  font-size: 22px;
+  line-height: auto;
+}
+.main-title.fourth-title,
+.second-title.fourth-title,
+.third-title.fourth-title,
+.fourth-title.fourth-title,
+.right-container-info-1.fourth-title,
+.info-1.fourth-title,
+.info-3.fourth-title,
+.info-4-style-1.fourth-title,
+.info-4-style-2.fourth-title,
+.info-4-style-3.fourth-title,
+.span-style.fourth-title {
+  font-size: 18px;
+  line-height: auto;
+}
+.main-title.info-1, .main-title.info-3, .main-title.info-4-style-1, .main-title.info-4-style-2, .main-title.info-4-style-3,
+.second-title.info-1,
+.second-title.info-3,
+.second-title.info-4-style-1,
+.second-title.info-4-style-2,
+.second-title.info-4-style-3,
+.third-title.info-1,
+.third-title.info-3,
+.third-title.info-4-style-1,
+.third-title.info-4-style-2,
+.third-title.info-4-style-3,
+.fourth-title.info-1,
+.fourth-title.info-3,
+.fourth-title.info-4-style-1,
+.fourth-title.info-4-style-2,
+.fourth-title.info-4-style-3,
+.right-container-info-1.info-1,
+.right-container-info-1.info-3,
+.right-container-info-1.info-4-style-1,
+.right-container-info-1.info-4-style-2,
+.right-container-info-1.info-4-style-3,
+.info-1.info-1,
+.info-1.info-3,
+.info-1.info-4-style-1,
+.info-1.info-4-style-2,
+.info-1.info-4-style-3,
+.info-3.info-1,
+.info-3.info-3,
+.info-3.info-4-style-1,
+.info-3.info-4-style-2,
+.info-3.info-4-style-3,
+.info-4-style-1.info-1,
+.info-4-style-1.info-3,
+.info-4-style-1.info-4-style-1,
+.info-4-style-1.info-4-style-2,
+.info-4-style-1.info-4-style-3,
+.info-4-style-2.info-1,
+.info-4-style-2.info-3,
+.info-4-style-2.info-4-style-1,
+.info-4-style-2.info-4-style-2,
+.info-4-style-2.info-4-style-3,
+.info-4-style-3.info-1,
+.info-4-style-3.info-3,
+.info-4-style-3.info-4-style-1,
+.info-4-style-3.info-4-style-2,
+.info-4-style-3.info-4-style-3,
+.span-style.info-1,
+.span-style.info-3,
+.span-style.info-4-style-1,
+.span-style.info-4-style-2,
+.span-style.info-4-style-3 {
+  font-size: 16px;
+  line-height: auto;
   font-style: normal;
 }
-.main-title.informations,
-.right-container-informations.informations,
-.informations.informations,
-.span-style.informations {
+.main-title.info-1, .main-title.info-4-style-2,
+.second-title.info-1,
+.second-title.info-4-style-2,
+.third-title.info-1,
+.third-title.info-4-style-2,
+.fourth-title.info-1,
+.fourth-title.info-4-style-2,
+.right-container-info-1.info-1,
+.right-container-info-1.info-4-style-2,
+.info-1.info-1,
+.info-1.info-4-style-2,
+.info-3.info-1,
+.info-3.info-4-style-2,
+.info-4-style-1.info-1,
+.info-4-style-1.info-4-style-2,
+.info-4-style-2.info-1,
+.info-4-style-2.info-4-style-2,
+.info-4-style-3.info-1,
+.info-4-style-3.info-4-style-2,
+.span-style.info-1,
+.span-style.info-4-style-2 {
   color: #979797;
-  line-height: 26px;
+}
+.main-title.info-1,
+.second-title.info-1,
+.third-title.info-1,
+.fourth-title.info-1,
+.right-container-info-1.info-1,
+.info-1.info-1,
+.info-3.info-1,
+.info-4-style-1.info-1,
+.info-4-style-2.info-1,
+.info-4-style-3.info-1,
+.span-style.info-1 {
   font-weight: 700;
-  font-style: normal;
+  line-height: 26px;
+}
+.main-title.info-3,
+.second-title.info-3,
+.third-title.info-3,
+.fourth-title.info-3,
+.right-container-info-1.info-3,
+.info-1.info-3,
+.info-3.info-3,
+.info-4-style-1.info-3,
+.info-4-style-2.info-3,
+.info-4-style-3.info-3,
+.span-style.info-3 {
+  font-weight: 400;
+  line-height: 26px;
+}
+.main-title.info-4-style-2,
+.second-title.info-4-style-2,
+.third-title.info-4-style-2,
+.fourth-title.info-4-style-2,
+.right-container-info-1.info-4-style-2,
+.info-1.info-4-style-2,
+.info-3.info-4-style-2,
+.info-4-style-1.info-4-style-2,
+.info-4-style-2.info-4-style-2,
+.info-4-style-3.info-4-style-2,
+.span-style.info-4-style-2 {
+  width: 11vw;
+  font-weight: 400;
 }
 .main-title.span-style,
-.right-container-informations.span-style,
-.informations.span-style,
+.second-title.span-style,
+.third-title.span-style,
+.fourth-title.span-style,
+.right-container-info-1.span-style,
+.info-1.span-style,
+.info-3.span-style,
+.info-4-style-1.span-style,
+.info-4-style-2.span-style,
+.info-4-style-3.span-style,
 .span-style.span-style {
   color: #4a4ff2;
+}
+
+.grid-section-4 {
+  display: grid;
+  gap: 10vh;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  align-items: start; /* Aligns content to the top of cells */
+  border-top: 2px solid #979797;
+  border-bottom: 2px solid #979797;
+}
+
+/* Style for the separator element */
+.separator {
+  grid-column: 1/-1; /* Occupy all columns */
+  grid-row: 3; /* Position between the second and third line */
+  height: 2px;
+  background-color: #979797;
+}
+
+/* Items 1 to 7 */
+.item-1 {
+  grid-column: 1;
+  grid-row: 1/3; /* Occupies the first two lines */
+}
+
+.item-2 {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.item-3 {
+  grid-column: 3;
+  grid-row: 1;
+}
+
+.item-4 {
+  grid-column: 4;
+  grid-row: 1;
+  justify-self: end;
+}
+
+.item-5 {
+  grid-column: 2;
+  grid-row: 2;
+}
+
+.item-6 {
+  grid-column: 3;
+  grid-row: 2;
+}
+
+.item-7 {
+  grid-column: 4;
+  grid-row: 2;
+  justify-self: end;
+}
+
+/* Items 8 to 14 */
+.item-8 {
+  grid-column: 1;
+  grid-row: 3/5; /* Occupies the third and fourth line */
+}
+
+.item-9 {
+  grid-column: 2;
+  grid-row: 3;
+}
+
+.item-10 {
+  grid-column: 3;
+  grid-row: 3;
+}
+
+.item-11 {
+  grid-column: 4;
+  grid-row: 3;
+  justify-self: end;
+}
+
+.item-12 {
+  grid-column: 2;
+  grid-row: 4;
+}
+
+.item-13 {
+  grid-column: 3;
+  grid-row: 4;
+}
+
+.item-14 {
+  grid-column: 4;
+  grid-row: 4;
+  justify-self: end;
 }
