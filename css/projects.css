@@ -103,7 +103,8 @@
   min-height: 35vh;
 }
 .container-section.section-2 {
-  max-height: 90vh;
+  /* Removido max-height para evitar corte de conteúdo e footer escondido */
+  max-height: none;
   justify-content: center;
 }
 .container-section.section-3 {
@@ -111,14 +112,16 @@
   justify-content: center;
 }
 .container-section.section-4 {
-  justify-content: space-evenly;
-  max-height: 45vh;
+  justify-content: flex-start;
+  /* Removido max-height para deixar imagens fluírem */
+  max-height: none;
 }
 
 .container {
   display: flex;
+  flex-direction: row; /* Desktop volta a ser lado a lado */
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   width: 100%;
   min-height: inherit;
 }
@@ -135,7 +138,7 @@
   flex-direction: column;
   width: 55%;
   justify-content: flex-start;
-  align-items: flex-end;
+  align-items: flex-end; /* mantém grid alinhado à direita como antes */
 }
 
 .projects-main-title,
@@ -160,12 +163,13 @@
 
 /*Grid informations*/
 .grid-container {
-  width: 37%;
+  width: 100%;
+  max-width: 700px;
   display: grid;
-  /*1 fraction unit for each columns, 6 columns*/
-  grid-template-columns: repeat 2, 1fr;
-  /*1 fraction unit for each columns, 12 rows*/
-  grid-template-rows: repeat(6, 1fr);
+  grid-template-columns: repeat(2, 1fr); /* Corrige sintaxe repeat */
+  grid-template-rows: repeat(6, auto);
+  gap: 4px 24px;
+  margin-top: 10px;
 }
 
 .item-1,
@@ -240,3 +244,108 @@
 }
 
 /*End Grid informations*/
+/* -------------------- Responsive Adjustments -------------------- */
+@media (max-width: 1024px) {
+  .navbar,
+  .footer-container {
+    max-width: 90%;
+  }
+  .container-section {
+    max-width: 90%;
+  }
+  .projects-main-title.projects-main-title {
+    font-size: 34px;
+    line-height: 46px;
+  }
+  .grid-container {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    gap: 32px;
+    align-items: flex-start;
+  }
+  .left-container,
+  .right-container {
+    width: 100%;
+    align-items: flex-start;
+  }
+  .right-container {
+    align-items: flex-start;
+  }
+  .projects-main-title.projects-main-title {
+    font-size: 30px;
+    line-height: 40px;
+  }
+  .project-informations.project-informations {
+    font-size: 15px;
+  }
+  .grid-container {
+    grid-template-columns: 1fr 1fr;
+  }
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 8px;
+  }
+  .navbar-right a {
+    margin-left: 12px;
+    font-size: 16px;
+  }
+  .footer-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+    row-gap: 12px;
+  }
+  .footer-left,
+  .footer-right,
+  .social-media {
+    justify-self: center;
+    grid-column: 1 / -1;
+  }
+  .footer-right a {
+    margin: 0 10px;
+  }
+  .container-section.section-2 img,
+  .container-section.section-4 img {
+    width: 100%;
+    height: auto;
+  }
+  .container-section.section-4 {
+    flex-direction: column;
+    gap: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .projects-main-title.projects-main-title {
+    font-size: 26px;
+    line-height: 34px;
+  }
+  .project-informations.project-informations {
+    font-size: 14px;
+  }
+  .grid-container {
+    grid-template-columns: 1fr;
+  }
+  .navbar-title,
+  .footer-title {
+    font-size: 26px;
+  }
+  .navbar-right a,
+  .footer-right a {
+    font-size: 15px;
+  }
+  .grid-container {
+    font-size: 14px;
+  }
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
